@@ -48,7 +48,6 @@ export default {
   methods: {
     signIn () {
       const api = `${process.env.VUE_APP_API}admin/signin`
-      console.log(process.env.VUE_APP_API)
       this.$http.post(api, this.user)
         .then((res) => {
           console.log(res)
