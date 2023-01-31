@@ -50,7 +50,13 @@ export default {
       const api = `${process.env.VUE_APP_API}admin/signin`
       this.$http.post(api, this.user)
         .then((res) => {
-          console.log(res)
+          if (res.data.success) {
+            // 解構賦值
+            const { token, expired } = res.data
+            // 把東西存到cookie
+            document.cookie = `hexToken=${token}; expires=${new Date(expired)}`
+            this.$router.push('/dashboard/products')
+          }
         })
     }
   }

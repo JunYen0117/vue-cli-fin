@@ -43,7 +43,9 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {
+      "dot-notation": 0
+    }
   },
   "browserslist": [
     "> 1%",
